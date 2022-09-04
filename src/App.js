@@ -1,4 +1,5 @@
 import React from "react";
+import Setup from "./components/QuizSetup.jsx/Setup";
 import { useGlobalContext } from "./context/AppProvider";
 
 
@@ -9,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <h3>my quiz</h3>
+      <Setup />
     </div>
   );
 }
