@@ -1,16 +1,14 @@
 import React from "react";
-import Setup from "./components/QuizSetup.jsx/Setup";
-import { useGlobalContext } from "./context/AppProvider";
-
+import Setup from "./components/QuizSetup/Setup";
+import QuizForm from "./components/QuizForm/QuizForm"
+import { useGlobalContext } from "./context/AppProvider"; 
 
 function App() {
-  const { questions } = useGlobalContext();
-
-  console.log(questions);
+  const { turnPage } = useGlobalContext();
 
   return (
     <div className="App">
-      <Setup />
+      { turnPage ? (<QuizForm />) : (<Setup />)}
     </div>
   );
 }
