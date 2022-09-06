@@ -11,8 +11,9 @@ export default function AppProvider({ children }) {
         category: "21",
         difficulty: "easy"
     });
-    const [loading, setLoading] = React.useState(true);
+    const [loading, setLoading] = React.useState(false);
     const [turnPage, setTurnPage] = React.useState(false);
+    const [error, setError] = React.useState(false);
     // const [score, setSocre] = React.useState(0);
 
     const getData = async (url) => {
@@ -20,15 +21,16 @@ export default function AppProvider({ children }) {
         setTurnPage(false);
         try {
             const res = await axios.get(url);
-            console.log(res);
-            if (res.status === 200 && (res.data.results.length>0)) {
+            if (res.status === 200 && (res.data.results.length > 0)) {
                 setQuestions(res.data.results);
                 setLoading(false);
                 setTurnPage(true);
             } else {
+                setLoading(false);
+                setError(true);
                 throw new Error("Don't show data!");
+                
             }
-
         } catch (error) {
             console.error(error);
             setLoading(false);
@@ -51,7 +53,7 @@ export default function AppProvider({ children }) {
     }
 
     return (
-        <AppContext.Provider value={{ questions, quiz, turnPage, loading, handleChange, handleSubmit }}>
+        <AppContext.Provider value={{ questions, quiz, turnPage, loading, error, handleChange, handleSubmit }}>
             {children}
         </AppContext.Provider>
     )

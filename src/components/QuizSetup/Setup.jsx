@@ -3,11 +3,12 @@ import styles from "./Setup.module.css";
 import { useGlobalContext } from "../../context/AppProvider";
 
 function Setup() {
-  const { quiz, handleChange, handleSubmit } = useGlobalContext();
+  const { quiz, error, handleChange, handleSubmit } = useGlobalContext();
 
   return (
     <main className={styles.container}>
-      <form className={styles.form} onSubmit={handleSubmit} >
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <h2 className={styles.header}>Setup Quiz</h2>
         <div className={styles.group}>
           <label className={styles.label} htmlFor="number">
             Number Of Questions
@@ -60,6 +61,9 @@ function Setup() {
         <button className={styles.button} type="submit">
           Start
         </button>
+        {error && (
+          <div style={{color: "red", fontWeight:"700", fontSize: "1rem"}}>Don't show data!</div>
+        )}
       </form>
     </main>
   );
