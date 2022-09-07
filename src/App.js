@@ -1,7 +1,7 @@
 import React from "react";
 import Setup from "./components/QuizSetup/Setup";
 import QuizForm from "./components/QuizForm/QuizForm";
-import Loading from "./components/Loading";
+import Loading from "./components/Loading/Loading";
 import { useGlobalContext } from "./context/AppProvider"; 
 
 function App() {
