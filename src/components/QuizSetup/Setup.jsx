@@ -34,12 +34,16 @@ function Setup() {
             name="category"
             id=""
           >
+            <option value="17">Science and Nature</option>
+            <option value="18">Science: Computers</option>
+            <option value="19">Science: Mathematics</option>
+            <option value="20">Mythology</option>
             <option value="21">Sports</option>
+            <option value="22">Geography</option>
             <option value="23">History</option>
             <option value="24">Politics</option>
-            <option value="27">Animals</option>
             <option value="25">Art</option>
-            <option value="19">Science: Mathematics</option>
+            <option value="27">Animals</option>
           </select>
         </div>
         <div className={styles.group}>
@@ -62,7 +66,9 @@ function Setup() {
           Start
         </button>
         {error && (
-          <div style={{color: "red", fontWeight:"700", fontSize: "1rem"}}>Don't show data!</div>
+          <div style={{ color: "red", fontWeight: "700", fontSize: "1rem" }}>
+            Don't show data!
+          </div>
         )}
       </form>
     </main>

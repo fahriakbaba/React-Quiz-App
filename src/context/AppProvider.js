@@ -16,6 +16,7 @@ export default function AppProvider({ children }) {
     const [error, setError] = React.useState(false);
     const [count, setCount] = React.useState(0);
     const [score, setScore] = React.useState(0);
+    const [isModal, setIsModal] = React.useState(false);
 
     const getData = async (url) => {
         setLoading(true);
@@ -56,7 +57,7 @@ export default function AppProvider({ children }) {
         let index = count + 1;
         if (index > (questions.length - 1)) {
             index = 0;
-            // openModal();
+            openModal();
         }
         setCount(index);
     }
@@ -71,10 +72,37 @@ export default function AppProvider({ children }) {
         }
     }
 
-    console.log("score: ",score);
+    const openModal = () => {
+        setIsModal(true);
+    }
+
+    const closeModal = () => {
+        setIsModal(false);
+        setLoading(false);
+        setTurnPage(false);
+        setScore(0);
+    }
+
+    console.log("score: ", score);
 
     return (
-        <AppContext.Provider value={{ questions, quiz, turnPage, loading, error, count, score, handleChange, handleSubmit, nextQuestion, checkAnswer }}>
+        <AppContext.Provider
+            value={{
+                questions,
+                quiz,
+                turnPage,
+                loading,
+                error,
+                count,
+                score,
+                isModal,
+                handleChange,
+                handleSubmit,
+                nextQuestion,
+                checkAnswer,
+                openModal,
+                closeModal,
+            }}>
             {children}
         </AppContext.Provider>
     )
