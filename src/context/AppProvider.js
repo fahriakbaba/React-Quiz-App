@@ -83,8 +83,6 @@ export default function AppProvider({ children }) {
         setScore(0);
     }
 
-    console.log("score: ", score);
-
     return (
         <AppContext.Provider
             value={{

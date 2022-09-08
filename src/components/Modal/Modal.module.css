@@ -34,7 +34,7 @@
 }
 
 .playBtn {
-    margin: 12px auto 6px auto;
+    margin: 12px auto 0 auto;
     background-color: rgb(255, 177, 0);
     padding: 8px 12px;
     letter-spacing: 1.5px;

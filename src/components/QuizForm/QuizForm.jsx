@@ -9,8 +9,8 @@ function QuizForm() {
 
   const { correct_answer, incorrect_answers, question } = questions[count];
   const newAnswers = [...incorrect_answers];
-  newAnswers.splice(0, 0, correct_answer);
-  console.log("new array: ", newAnswers);
+  const randonQueue = Math.floor(Math.random() * (newAnswers.length + 1));
+  newAnswers.splice(randonQueue, 0, correct_answer);
 
   return (
     <main className={styles.container}>
