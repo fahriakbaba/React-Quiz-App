@@ -1,9 +1,15 @@
 # Getting Started with Create React App
 
+![Image](./public/images/setup.png)
+![Image](./public/images/question.png)
+![Image](./public/images/modal.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project is prepared by following 
 - module.css
 - context API 
+- dangerouslySetInnerHTML
 ## Available Scripts
 
 In the project directory, you can run:
